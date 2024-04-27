@@ -18,6 +18,7 @@ const containerVideos = document.querySelector(".videos__container")
                     <img  class="img-canal" src="${video.imagem}" alt="logo do canal">
                     <h3 class="titulo-video">${video.titulo},</h3>
                     <p class="titulo-canal">${video.descricao}</p>
+                    <p class="categoria" hidden>${video.categoria}</p>
                 </div>
                 </li>
                 `
@@ -59,29 +60,30 @@ debugger
     }
 }
 
-const btnCategoria = document.querySelectorAll('.supeior__item')
-
-btnCategoria.forEach((botao)=>{
-    let  nomeCategoria = botao.getAttribute('name')
-    btnCategoria.addEventListener('click',()=>filtrarPorCategoria(nomeCategoria)
-)
-
+const botaoCategoria = document.querySelectorAll('.superior__item')
+debugger
+botaoCategoria.forEach((botao)=>{
+    let categoria = botao.getAttribute('name')
+    botao.addEventListener('click',()=>filtrarPorCategorida(categoria))
 
 })
 
-function filtrarPorCategoria(nome){
+function filtrarPorCategorida(filtro){
     debugger
     const videos = document.querySelectorAll('.videos__item')
-    for (let video of videos){
-        let categoria = video.getAttribute("name").toLowerCase()
-        if(categoria.toLowerCase().includes(nome)){
-            video.style.display ='block'
-        }else{
-            video.style.display ='none'
-        }
-    }
-}
+    for(let video of videos){
+        let nomeCategoria = video.querySelector('.categoria').textContent.toLowerCase()
+        let valorFiltro = filtro.toLowerCase()
 
+        if (nomeCategoria.includes(valorFiltro)|| valorFiltro =='tudo'){
+            video.style.display = "block"
+        }else{
+            video.style.display = "none"
+        }
+
+    }
+
+}
 
 
 // const api = fetch('http://localhost:3000/videos')
