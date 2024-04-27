@@ -18,6 +18,7 @@ const containerVideos = document.querySelector(".videos__container")
                     <img  class="img-canal" src="${video.imagem}" alt="logo do canal">
                     <h3 class="titulo-video">${video.titulo},</h3>
                     <p class="titulo-canal">${video.descricao}</p>
+                    <p class="categoria" hidden>${video.categoria}</p>
                 </div>
                 </li>
                 `
@@ -55,6 +56,31 @@ debugger
         videos.style.display ="block"
 
     }
+}
+
+const botaoCategoria = document.querySelectorAll('.superior__item')
+debugger
+botaoCategoria.forEach((botao)=>{
+    let categoria = botao.getAttribute('name')
+    botao.addEventListener('click',()=>filtrarPorCategorida(categoria))
+
+})
+
+function filtrarPorCategorida(filtro){
+    debugger
+    const videos = document.querySelectorAll('.videos__item')
+    for(let video of videos){
+        let nomeCategoria = video.querySelector('.categoria').textContent.toLowerCase()
+        let valorFiltro = filtro.toLowerCase()
+
+        if (nomeCategoria.includes(valorFiltro)|| valorFiltro =='tudo'){
+            video.style.display = "block"
+        }else{
+            video.style.display = "none"
+        }
+
+    }
+
 }
 
 
