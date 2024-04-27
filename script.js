@@ -52,10 +52,36 @@ debugger
 
         }
     }else{
-        videos.style.display ="block"
+        for (let video of videos) {
+            video.style.display = "block";
+        }
 
     }
 }
+
+const btnCategoria = document.querySelectorAll('.supeior__item')
+
+btnCategoria.forEach((botao)=>{
+    let  nomeCategoria = botao.getAttribute('name')
+    btnCategoria.addEventListener('click',()=>filtrarPorCategoria(nomeCategoria)
+)
+
+
+})
+
+function filtrarPorCategoria(nome){
+    debugger
+    const videos = document.querySelectorAll('.videos__item')
+    for (let video of videos){
+        let categoria = video.getAttribute("name").toLowerCase()
+        if(categoria.toLowerCase().includes(nome)){
+            video.style.display ='block'
+        }else{
+            video.style.display ='none'
+        }
+    }
+}
+
 
 
 // const api = fetch('http://localhost:3000/videos')
