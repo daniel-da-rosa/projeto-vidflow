@@ -2,11 +2,11 @@
     "videos": [
       {
         "id": 1,
-        "titulo": "Conhecendo a linguagem Go | Hipsters.Talks",
-        "descricao": "3 mil visualizações",
-        "url": "https://www.youtube.com/embed/y8FeZMv37WU",
+        "titulo": "Iniflex o Erp do plástico",
+        "descricao": "398 mil visualizações",
+        "url": "https://www.youtube.com/embed/Hpz1F5RNgz4?si=iJb2AmKS3k0Ly7vl",
         "imagem": "https://github.com/MonicaHillman/aluraplay-requisicoes/blob/main/img/logo.png?raw=true",
-        "categoria": "Programação"
+        "categoria": "Sistemas industriais"
       },
       {
         "id": 2,
